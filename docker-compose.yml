@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  liquidsoap:
+    container_name: "liquidsoap"
+    build: ./liquidsoap
+    links:
+      - icecast
+
+  icecast:
+    container_name: "icecast"
+    build: ./icecast
+    ports:
+      - "8000:8000"
